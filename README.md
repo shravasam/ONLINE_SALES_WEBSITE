@@ -1,4 +1,4 @@
-#online sales website
+#project configuration
 
 Install Web server apache 2:
 sudo apt-get install apache2

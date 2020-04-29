@@ -1,5 +1,4 @@
-# phpprojet
-onlineshopping
+#online sales website
 
 Install Web server apache 2:
 sudo apt-get install apache2

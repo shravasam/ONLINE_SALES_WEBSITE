@@ -162,7 +162,7 @@ if (isset($_POST['submit1'])) {
                                <td><img src="image/<?php echo $value['product_img'];?>" style="width: 100px;"> </td>    
                                <td><input type="text" name="user" value="<?php echo $_SESSION['username'];?>" readonly </td>   
                                <td><input type="text" name="category" value="<?php echo $value['item_name'];?>" readonly </td> 
-				<td><input type="text" name="product" value="<?php echo $value['item_name2'];?>" readonly </td>
+								<td><input type="text" name="product" value="<?php echo $value['item_name2'];?>" readonly </td>
                                <td><input type="text"name="quantity" value="<?php echo $value['item_quantity']; ?>" readonly </td>  
                                <td><input type="text"name="price" value="€<?php echo $value['item_price'];?>" readonly </td>  
                                <td>$<?php echo number_format($value["item_quantity"] * $value["item_price"],2);?> </td> 

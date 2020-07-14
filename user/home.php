@@ -184,11 +184,11 @@ Biometric security and encryption</p>
 <h2 class="w3-center">New models</h2>
 
 <div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides" src="image/huwai.jpg" style="width:100%">
-  <img class="mySlides" src="image/mackbook.jpg" style="width:100%">
-  <img class="mySlides" src="image/logicom.jpg" style="width:100%">
-  <img class="mySlides" src="image/lenovo.jpg" style="width:100%">
-<img class="mySlides" src="image/asusphone.jpg" style="width:100%">
+  <img class="mySlides" src="/image/huawei.jpg" style="width:100%">
+  <img class="mySlides" src="/image/mackbook.jpg" style="width:100%">
+  <img class="mySlides" src="/image/logicom.jpg" style="width:100%">
+  <img class="mySlides" src="/image/lenovo.jpg" style="width:100%">
+<img class="mySlides" src="/image/asusphone.jpg" style="width:100%">
 
 </div>
 
@@ -249,4 +249,3 @@ document.getElementById("defaultOpen").click();
 </script>
 </body>
 </html>
-

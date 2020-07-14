@@ -1,5 +1,8 @@
+
+<?php include('server.php')
 //user registration server side page.
-<?php include('server.php') ?>
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,8 @@
 	
 	<form method="post" action="userReg.php" style="text-align:center;">
 
-		<?php include('errors.php'); ?>
+		<?php 
+		//include('errors.php'); ?>
 
 		<div class="input-group">
 			<label>Username</label>

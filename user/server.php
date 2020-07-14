@@ -1,6 +1,6 @@
-//This page will establish user registration and login from the server side, when user click on submit button it will hit the $POST method
-//here mp5 used to encrypt the password 
-<?php 
+ 
+<?php //This page will establish user registration and login from the server side, when user click on submit button it will hit the $POST method
+//here mp5 used to encrypt the password
 	session_start();
 
 	// variable declaration

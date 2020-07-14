@@ -1,6 +1,6 @@
 
 <?php 
-	session_start();
+	//session_start();
 
 	// variable declaration
 	$image = "";
@@ -42,5 +42,4 @@ if (isset($_POST['add_product'] )) {
 
 	
 ?>
-
 

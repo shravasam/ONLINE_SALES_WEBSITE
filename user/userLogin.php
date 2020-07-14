@@ -1,5 +1,6 @@
-//User login server side page, after giving valid details
-<?php include('server.php') ?>
+
+<?php include('server.php')
+//User login server side page, after giving valid details ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 		
 	</div>
 	
-	<form method="post" action="userLogin.php" style="text-align:center;">
+	<form method="get" action="userLogin.php" style="text-align:center;">
 
 		<?php include('errors.php'); ?>
 

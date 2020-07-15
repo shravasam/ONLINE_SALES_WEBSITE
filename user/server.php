@@ -64,13 +64,13 @@ if (isset($POST['user_login'])) {
 			$results = mysqli_query($connect, $query2);
 			//$query3 = "SELECT * FROM users";
 			//$result3 = mysqli_query($connects,$query3);	
-			echo " $result3";
+			//echo " $result3";
 		if (mysqli_num_rows($results) == 1) {
 			$_SESSION['username'] = $username;
 				$_SESSION['success'] ="You are now logged in";
 			echo "<h1>welcom".$_SESSION['username']."</h1>";
 			
-				header('location: user/index.php');
+				header('location: index.php');
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}

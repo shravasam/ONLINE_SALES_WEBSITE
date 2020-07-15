@@ -63,10 +63,9 @@ if (isset($_POST['add_product'] )) {
 			//$_SESSION['category'] = $category;
 			$_SESSION['success'] = "added";
 			header('location:product.php');
-<p><a href="..//logout.php"> logout</a></p>
+		}
 
-	
-
-}	
-
-?>
+?>		
+			<p>
+				<a href= "..//logout.php"> logout</a>
+			</p

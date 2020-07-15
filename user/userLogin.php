@@ -1,5 +1,5 @@
 
-<?php include('server.php')
+<?php require('..//user/userloginserver.php')
 //User login server side page, after giving valid details ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 	
 	<form method="get" action="userLogin.php" style="text-align:center;">
 
-		<?php include('errors.php'); ?>
+		<?php //include('errors.php'); ?>
 
 		<div class="input-group">
 			<label>Username</label>

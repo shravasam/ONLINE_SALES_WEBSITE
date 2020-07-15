@@ -1,4 +1,5 @@
 <?php
+/** this code helps to connect model class where we develop select and insert queries */
 /**
  * Copyright (C) 2019 Phppot
  *

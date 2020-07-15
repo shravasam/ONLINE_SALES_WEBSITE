@@ -15,3 +15,8 @@ and set username & password.
 goto the webbrowser type 127.0.0.1/phpmyadmin
 username: root
 password: set password
+
+-----------------------
+The project is switched to visual studio code. So the web server switched to php server.
+To scale the project and implement additional features the new classes are being developed. like datasource classes and model view classes for selecting, inserting, retriving and verifying etc the data into database. and also to validate the form from server side java script functions are being developed.
+

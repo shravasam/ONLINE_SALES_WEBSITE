@@ -1,8 +1,8 @@
 <?php
-use Phppot\Member;
+use Phppot\model;
 if (! empty($_POST["signup-btn"])) {
-    require_once './Model/Member.php';
-    $member = new Member();
+    require_once '/model.php';
+    $member = new model();
     $registrationResponse = $member->registerMember();
 }
 ?>

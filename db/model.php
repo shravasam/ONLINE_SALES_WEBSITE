@@ -8,13 +8,13 @@ class Member
 
     function __construct()
     {
-        require_once __DIR__ . './../lib/DataSource.php';
+        require_once __DIR__ . 'DataSource.php';
         $this->ds = new DataSource();
     }
 
     public function isMemberExists($email)
     {
-        $query = 'SELECT * FROM tbl_member where email = ?';
+        $query = 'SELECT * FROM users where email = ?';
         $paramType = 's';
         $paramValue = array(
             $email
@@ -34,7 +34,7 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-            $query = 'INSERT INTO tbl_member (username, password, email) VALUES (?, ?, ?)';
+            $query = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
@@ -53,7 +53,7 @@ class Member
 
     public function getMember($username)
     {
-        $query = 'SELECT * FROM tbl_member where username = ?';
+        $query = 'SELECT * FROM users where username = ?';
         $paramType = 's';
         $paramValue = array(
             $username

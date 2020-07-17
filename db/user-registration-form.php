@@ -1,8 +1,10 @@
+
 <?php
-if (! empty($_POST["login-btn"])) {
-    require_once '/model.php';
-    $member = new Member();
-    $loginResult = $member->loginMember();
+use db\model;
+if (! empty($_POST["signup-btn"])) {
+    require_once '../db/model.php';
+    $member = new model();
+    $registrationResponse = $member->registerMember();
 }
 ?>
 

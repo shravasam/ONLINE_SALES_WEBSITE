@@ -1,5 +1,5 @@
 <?php
-namespace Phppot;
+namespace db;
 
 class Member
 {
@@ -8,13 +8,13 @@ class Member
 
     function __construct()
     {
-        require_once __DIR__ . 'DataSource.php';
+        require_once __DIR__ . '../db/datasource.php';
         $this->ds = new DataSource();
     }
 
     public function isMemberExists($email)
     {
-        $query = 'SELECT * FROM users where email = ?';
+        $query = 'SELECT * FROM tbl_member where email = ?';
         $paramType = 's';
         $paramValue = array(
             $email
@@ -34,7 +34,7 @@ class Member
             if (! empty($_POST["signup-password"])) {
                 $hashedPassword = password_hash($_POST["signup-password"], PASSWORD_DEFAULT);
             }
-            $query = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
+            $query = 'INSERT INTO tbl_member (username, password, email) VALUES (?, ?, ?)';
             $paramType = 'sss';
             $paramValue = array(
                 $_POST["username"],
@@ -53,7 +53,7 @@ class Member
 
     public function getMember($username)
     {
-        $query = 'SELECT * FROM users where username = ?';
+        $query = 'SELECT * FROM tbl_member where username = ?';
         $paramType = 's';
         $paramValue = array(
             $username
@@ -75,7 +75,7 @@ class Member
         }
         if ($loginPassword == 1) {
             $_SESSION["username"] = $loginUserResult[0]["username"];
-            $url = "./home.php";
+            $url = ".user/index.php";
             header("Location: $url");
         } else if ($loginPassword == 0) {
             $loginStatus = "Invalid username or password.";

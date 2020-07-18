@@ -1,19 +1,25 @@
 
 <?php
-use db\model;
+use ONLINE_SALES_WEBSITE\db;
+use ONLINE_SALES_WEBSITE\db\model;
+
+
 if (! empty($_POST["signup-btn"])) {
-    require_once '../db/model.php';
+	require_once '..\db\model.php';
+	//require_once ()
     $member = new model();
     $registrationResponse = $member->registerMember();
 }
+
 ?>
+
 
 <HTML>
 <HEAD>
 <TITLE>Registration</TITLE>
 <link href="./assets/css/phppot-style.css" type="text/css"
 	rel="stylesheet" />
-<link href="./assets/css/user-registration.css" type="text/css"
+<link href="./user-registration.css" type="text/css"
 	rel="stylesheet" />
 </HEAD>
 <BODY>
@@ -92,5 +98,8 @@ if (! empty($_POST["signup-btn"])) {
 			</div>
 		</div>
 	</div>
+
+	
 </BODY>
 </HTML>
+

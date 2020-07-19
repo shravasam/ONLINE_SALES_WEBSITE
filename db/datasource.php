@@ -16,7 +16,7 @@
  *
  * @version 2.5 - recordCount function added
  */
-class DataSource
+class datasource
 {
 
     // PHP 7.1.0 visibility modifiers are allowed for class constants.

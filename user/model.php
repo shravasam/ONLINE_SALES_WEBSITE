@@ -1,15 +1,18 @@
 <?php
-//namespace db;
+$config_path = __DIR__.'/../db/datasource.php';
+$loginurl = __DIR__.'/../user/index.php';
+require $config_path;
+require $loginurl;
 
-class Member
+class model
 {
 
     private $ds;
 
     function __construct()
     {
-        require_once __DIR__ . '../db/datasource.php';
-        $this->ds = new DataSource();
+       // require_once __DIR__ . '../db/datasource.php';
+        $this->ds = new datasource();
     }
 
     public function isMemberExists($email)
@@ -75,8 +78,8 @@ class Member
         }
         if ($loginPassword == 1) {
             $_SESSION["username"] = $loginUserResult[0]["username"];
-            $url = ".user/index.php";
-            header("Location: $url");
+            //$url = "user/index.php";
+            header("Location: $loginurl");
         } else if ($loginPassword == 0) {
             $loginStatus = "Invalid username or password.";
             return $loginStatus;

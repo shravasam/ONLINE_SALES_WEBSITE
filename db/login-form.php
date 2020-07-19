@@ -1,7 +1,10 @@
 <?php
-use model;
+define('ROOT_DIR', realpath(__DIR__.'/..'));
+require __DIR__.'/../user/model.php';
+
+//use model;
 if (! empty($_POST["login-btn"])) {
-    require_once '../db/model.php';
+   // require_once '../db/model.php';
     $member = new model();
     $loginResult = $member->loginMember();
 }

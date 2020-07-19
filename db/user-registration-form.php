@@ -1,11 +1,12 @@
 
 <?php
-use ONLINE_SALES_WEBSITE\db;
-use ONLINE_SALES_WEBSITE\db\model;
 
+//use ONLINE_SALES_WEBSITE\db\model as modelpath;
 
 if (! empty($_POST["signup-btn"])) {
-	require_once '..\db\model.php';
+
+	include 'model.php';
+	//require_once '\model.php';
 	//require_once ()
     $member = new model();
     $registrationResponse = $member->registerMember();

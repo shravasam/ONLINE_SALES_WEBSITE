@@ -8,7 +8,7 @@
  * In essense, you can use it on commercial software, modify and distribute free.
  * Though not mandatory, you are requested to attribute this URL in your code or website.
  */
-namespace Phppot;
+//namespace Phppot;
 
 /**
  * Generic datasource class for handling DB operations.

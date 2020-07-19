@@ -1,11 +1,13 @@
 
 <?php
 
+require '/home/sravan/Documents/2020/PROJET-2020/ONLINE_SALES_WEBSITE/user/model.php';
+
 //use ONLINE_SALES_WEBSITE\db\model as modelpath;
 
 if (! empty($_POST["signup-btn"])) {
 
-	include 'model.php';
+	
 	//require_once '\model.php';
 	//require_once ()
     $member = new model();

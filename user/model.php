@@ -1,5 +1,5 @@
 <?php
-namespace db;
+//namespace db;
 
 class Member
 {

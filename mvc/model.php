@@ -1,6 +1,7 @@
 <?php
-$config_path = __DIR__.'/../db/datasource.php';
-$loginurl = __DIR__.'/../user/index.php';
+session_start();
+$config_path = __DIR__.'/../mvc/datasource.php';
+$loginurl = __DIR__.'/../mvc/index.php';
 require $config_path;
 require $loginurl;
 

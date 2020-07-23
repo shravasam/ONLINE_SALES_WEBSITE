@@ -1,6 +1,6 @@
 <?php
 define('ROOT_DIR', realpath(__DIR__.'/..'));
-require __DIR__.'/../user/model.php';
+require __DIR__.'/../mvc/model.php';
 
 //use model;
 if (! empty($_POST["login-btn"])) {

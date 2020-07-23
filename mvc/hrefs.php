@@ -1,6 +1,10 @@
-<?php
-use ONLINE_SALES_WEBSITE\db;
-
+<?php 
+//define('ROOT_DIR', realpath(__DIR__.'/..'));
+//require __DIR__.'/..mvc/model.php';
+$config_path = __DIR__.'/../mvc/newUser/user-registration-form.php';
+//$loginurl = __DIR__.'/../mvc/index.php';
+require $config_path;
+//require $loginurl;
 session_start();
 ?>
 <HTML>
@@ -14,7 +18,7 @@ session_start();
 </HEAD>
 <BODY>
 	<div class="phppot-container">
-	<?php require_once "login-form.php";?>
+	<?php require_once "$config_path";?>
 	</div>
 </BODY>
 </HTML>

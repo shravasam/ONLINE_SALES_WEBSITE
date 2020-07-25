@@ -1,9 +1,9 @@
 <?php
 session_start();
-$config_path = __DIR__.'/../mvc/datasource.php';
-$loginurl = __DIR__.'/../mvc/index.php';
-require $config_path;
-require $loginurl;
+//$config_path = __DIR__.'/../mvc/datasource.php';
+//$loginurl = __DIR__.'/../mvc/index.php';
+//require $config_path;
+//require $loginurl;
 
 class model
 {
@@ -12,7 +12,10 @@ class model
 
     function __construct()
     {
-       // require_once __DIR__ . '../db/datasource.php';
+       //require_once __DIR__ . '../mvc/datasource.php';
+       require_once __DIR__ . '/../mvc/datasource.php';
+       //$config_path = __DIR__.'/../mvc/datasource.php';
+       //require $config_path;
         $this->ds = new datasource();
     }
 
@@ -80,6 +83,8 @@ class model
         if ($loginPassword == 1) {
             $_SESSION["username"] = $loginUserResult[0]["username"];
             //$url = "user/index.php";
+            $loginurl = __DIR__.'/../mvc/index.php';
+            require $loginurl;
             header("Location: $loginurl");
         } else if ($loginPassword == 0) {
             $loginStatus = "Invalid username or password.";

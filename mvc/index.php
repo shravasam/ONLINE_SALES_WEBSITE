@@ -133,13 +133,13 @@ if (isset($_POST['submit1'])) {
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr> 
-                              <th>product image</th> <th width="40%">Category</th>
-                               <th width="40%">product</th>  
-
-                               <th width="10%">Quantity</th>  
-                               <th width="20%">Price</th>  
-                               <th width="15%">Total</th>  
-                               <th width="5%">Action</th>  
+                              <th>product image</th>
+                              <th width="40%">Category</th>
+                              <th width="40%">product</th>  
+                              <th width="10%">Quantity</th>  
+                              <th width="20%">Price</th>  
+                              <th width="15%">Total</th>  
+                              <th width="5%">Action</th>  
                           </tr>  
                              <?php 
                            if(!empty($_SESSION["sale"]))
@@ -154,13 +154,13 @@ if (isset($_POST['submit1'])) {
 <tr> 
     <td><img src="/image/?php echo $value['product_img'];?>" style="width: 100px;"> </td>    
     <td><input type="text" name="user" value="<?php echo $_SESSION['username'];?>" readonly </td>   
-    <td><input type="text" name="category" value="<?php echo $value['item_name'];?>" readonly </td> 
+    <td><input type="text" name="category" value="<?php echo $value ['item_name'];?>"readonly</td> 
 		<td><input type="text" name="product" value="<?php echo $value['item_name2'];?>" readonly </td>
     <td><input type="text"name="quantity" value="<?php echo $value['item_quantity']; ?>" readonly </td>  
     <td><input type="text"name="price" value="€<?php echo $value['item_price'];?>" readonly </td>  
     <td>$<?php echo number_format($value["item_quantity"] * $value["item_price"],2);?> </td> 
     <td><a href="index.php?action=delete&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">Remove</span></a></td>  
-<!----<td><a href="index.php?submit1=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td>   -->          
+    <td><a href="index.php?submit1=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td>       
     <td><input type="submit" name="" style="margin-top:5px;" class="btn btn-success" value="Order" />  </td>
       </div>  
                      </form>              

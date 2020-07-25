@@ -1,5 +1,6 @@
+<?php include('order.php')
 //After adding into basket this will redirect to validate page as this will show all the information that user did choose.
-<?php include('/order.php') ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>

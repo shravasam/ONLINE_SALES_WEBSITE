@@ -1,5 +1,6 @@
+
+<?php
 //user order page after choosing the products from the his basket. it will store the values in the database @orders in basket.db
-<?php 
 	session_start();
 
 	// variable declaration
@@ -14,7 +15,7 @@
 
 	// connect to database
 
-	$connect = mysqli_connect('127.0.0.1', 'root', '12581258', 'customer');
+	$connect = mysqli_connect('localhost', 'root', '12581258', 'customer');
 	if ($connect->connect_error) {
  	 die("Database connection failed: " . $connect->connect_error);
 	}
@@ -29,13 +30,16 @@ if (isset($_POST['order_user'] )) {
 		$user =  $_POST['user'];
 		//$user = ucfirst(strtolower($user));
 		
-		$category =$_POST['category'];
+		echo $_POST['category'];
+		$category = implode(" ",$_POST);
+		
+		//$category =$_POST['category'];
 		//$category = ucfirst(strtolower($category));
 		
 		$product = $_POST['product'];	
 		//$product = ucfirst(strtolower($product));
 		
-		$quantity =  $_POST['quantity'];
+		//$quantity =  $_POST['quantity'];
 		//$quantity = ucfirst(strtolower($quantity));
 		
 		$price = $_POST['price'];
@@ -43,11 +47,11 @@ if (isset($_POST['order_user'] )) {
 
 		echo $user;
 
-			$query =  "INSERT INTO orders (user,category, product, quantity, price) 
-					  VALUES ('$user','$category','$product','$quantity','$price')";
+			$query =  "INSERT INTO orders (user, category) 
+					  VALUES ('$user, $category')";
 			 
-			$que = mysqli_query($connect, $query);
-			if($que){
+			mysqli_query($connect, $query);
+			if($query){
 			echo 'success';
 			}
 			else
@@ -57,8 +61,10 @@ if (isset($_POST['order_user'] )) {
 			
 			
 			$_SESSION['category'] = $category;
+			$config_path = __DIR__.'/../mvc/index.php';
+			require $config_path;
 			$_SESSION['success'] = "added";
-			header('location: mvc/index.php');
+			//header('location: $config_path');
 
 
 	

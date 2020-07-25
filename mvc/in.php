@@ -140,7 +140,13 @@
                                <td colspan="3" align="right">Total</td>  
                                <td align="right">$<?php echo number_format($total);?></td>  
                                <td></td>  
-                          </tr> 
+                          </tr>
+                          <tr>  
+                               <td colspan="3" align="right">Total</td>  
+                               <td align="right">$<?php echo number_format($total);?></td>  
+                               <td></td>  
+                          </tr>
+                          
                        //  <?php } ?> 
                            
                      </table>  

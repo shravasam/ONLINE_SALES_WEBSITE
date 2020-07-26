@@ -68,23 +68,32 @@
       }      
      } 
     }
-  
-if (isset($_POST['submit1'])) {
-{
-      if($_GET["submit1"] == "add" ){
-		// receive all input values from the form
-	
-		//$item_id = mysqli_real_escape_string($connect, $_POST['item_id']);
-		$name= mysqli_real_escape_string($connect, $_POST['name']);	
-		$quantity = mysqli_real_escape_string($connect, $_POST['quantity']);
-		$price = mysqli_real_escape_string($connect, $_POST['price']);	
+ 
+    if(isset($_GET["action"] ))
+    {
+      if($_GET["action"] == "add" )
+      {
+        foreach($_SESSION["shopping_cart"] as $key=>$value)
+            {
+              if($value["item_id"] == $_GET["id"])
+              {
+               // ($_SESSION["shopping_cart"][$key]);
+                //echo $key;
+		$item_id= mysqli_real_escape_string($connect, $_POST['key']);	
 		//$username = mysqli_real_escape_string($connect, $_POST['usernam']);
 		//$total = mysqli_real_escape_string($connect, $_POST['total']);
-			$query2 = "INSERT INTO orders (item_name,item_quantity,item_price,) 
-					  VALUES('$name', '$quantity','$price')";
-			mysqli_query($connect, $query2);
+			$query = "INSERT INTO orderstest (item_id) 
+					  VALUES('$item_id')";
+      mysqli_query($connect, $query);
+      if($query){
+        echo 'success';
+        }
+        else
+       {
+          echo 'not success';
+      	}
 }
-}}
+}}}
 
 ?>
 <!DOCTYPE html>  
@@ -150,7 +159,7 @@ if (isset($_POST['submit1'])) {
 
                              ?>
 
-<form method="post" action="redirect.php"<?php echo $_SESSION['username'];?>">
+<form method="post" action="index.php"<?php echo $_SESSION['username'];?>">
 <tr> 
     <td><img src="/image/?php echo $value['product_img'];?>" style="width: 100px;"> </td>    
     <td><input type="text" name="user" value="<?php echo $_SESSION['username'];?>" readonly </td>   
@@ -159,8 +168,9 @@ if (isset($_POST['submit1'])) {
     <td><input type="text"name="quantity" value="<?php echo $value['item_quantity']; ?>" readonly </td>  
     <td><input type="text"name="price" value="€<?php echo $value['item_price'];?>" readonly </td>  
     <td>$<?php echo number_format($value["item_quantity"] * $value["item_price"],2);?> </td> 
-    <td><a href="index.php?action=delete&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">Remove</span></a></td>  
-    <td><a href="index.php?submit1=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td>       
+    <td><a href="index.php?action=delete&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">Remove</span></a></td> 
+    <td><a href="index.php?action=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td>  
+    <!--<td><a href="index.php?submit1=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td> -->      
     <td><input type="submit" name="" style="margin-top:5px;" class="btn btn-success" value="Order" />  </td>
       </div>  
                      </form>              

@@ -60,7 +60,33 @@
     }
 
 
-
+    if(isset($_GET["action"] ))
+    {
+      if($_GET["action"] == "add" )
+      {
+        foreach($_SESSION["shopping_cart"] as $key=>$value)
+            {
+              if($value["item_id"] == $_GET["id"])
+              {
+                echo $item_array_id;
+              
+      //($_SESSION["shopping_cart"][$key]);
+      //mysqli_real_escape_string($connect, )                //echo $key;
+		$item= mysqli_real_escape_string($connect, $_POST['item_id']);	
+		//$username = mysqli_real_escape_string($connect, $_POST['usernam']);
+		//$total = mysqli_real_escape_string($connect, $_POST['total']);
+			$query = "INSERT INTO orderstest (item) 
+					  VALUES('$item')";
+      mysqli_query($connect, $query);
+      if($query){
+        echo $item_price;
+        }
+        else
+       {
+          echo 'not success';
+      	}
+}
+}}}
 
 
 ?>
@@ -130,7 +156,8 @@
                                <td><?php echo $value['item_quantity']; ?></td>  
                                <td>$<?php echo $value['item_price'];?></td>  
                                <td>$<?php echo number_format($value["item_quantity"] * $value["item_price"],2);?></td>  
-                               <td><a href="in.php?action=delete&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">Remove</span></a></td>  
+                               <td><a href="in.php?action=delete&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">Remove</span></a></td>
+                               <td><a href="in.php?action=add&id=<?php  echo $value['item_id'];?>"><span class="btn btn-danger">add</span></a></td>  
                           </tr>  
                           <?php $total = $total + ($value["item_quantity"] * $value['item_price']);
                         }

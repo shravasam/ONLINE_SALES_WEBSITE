@@ -83,7 +83,7 @@ class model
         if ($loginPassword == 1) {
             $_SESSION["username"] = $loginUserResult[0]["username"];
             //$url = "user/index.php";
-            $loginurl = __DIR__.'/../mvc/index.php';
+            $loginurl = __DIR__.'/../mvc/in.php';
             require $loginurl;
             header("Location: $loginurl");
         } else if ($loginPassword == 0) {
